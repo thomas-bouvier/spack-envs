@@ -8,7 +8,7 @@ spack:
       variants: [+cuda cuda_arch=70]
     py-horovod:
       variants: [+cuda cuda_arch=70 tensor_ops=nccl]
-    py-torch:" \
+    py-torch:
       variants: [+cuda cuda_arch=70 +nccl +cudnn +magma +distributed]
   specs:
   - python
