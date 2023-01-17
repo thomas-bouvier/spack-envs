@@ -1,4 +1,7 @@
 spack:
+  config:
+    install_tree: /mnt/spack
+    build_stage: /tmp/spack-stage
   repos:
   - /root/mochi-spack-packages
   packages:
