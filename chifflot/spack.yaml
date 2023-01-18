@@ -19,6 +19,8 @@ spack:
   - openmpi@4.1.2
   - python
   - py-pip
+  - py-ruamel-yaml
+  - py-wandb
   - py-pillow
   - py-pandas
   - py-scipy
