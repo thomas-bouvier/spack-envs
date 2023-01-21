@@ -12,6 +12,9 @@ git clone https://github.com/thomas-bouvier/spack-envs.git ~/spack-envs
 spack config --scope defaults edit config
 install_tree: $spack/opt/spack
 build_stage: $user_cache_path/stage
+
+spack env activate ~/Dev/spack-envs/local
+spack install
 ```
 
 ## G5k
