@@ -30,5 +30,5 @@ spack:
   - py-bokeh
   - py-matplotlib
   - py-horovod@0.26.1 controllers=mpi frameworks=pytorch
-  - mochi-thallium@main ^argobots ^mercury@ae324b8 ~boostsys ~checksum +ofi +debug ^mochi.libfabric +cuda fabrics=tcp,rxm,verbs
+  - mochi-thallium@main ^argobots ^mercury@git.ae324b8 ~boostsys ~checksum +ofi +debug ^mochi.libfabric +cuda fabrics=tcp,rxm,verbs
   view: /mnt/view/gemini
