@@ -1,0 +1,38 @@
+packages:
+  all:
+    providers: 
+      blas: [intel-mkl]
+      lapack: [intel-mkl]
+      fftw-api: [intel-mkl]
+      scalapack: [intel-mkl]
+      mkl: [intel-mkl]
+  git:
+    externals:
+    - spec: git@2.17.1+tcltk
+      prefix: /usr
+    buildable: false
+  openssh:
+    externals:
+    - spec: openssh@7.4p1
+      prefix: /usr
+    buildable: false
+  curl:
+    externals:
+    - spec: curl@7.29.0+ldap
+      prefix: /usr
+    buildable: false
+  cuda:
+    externals:
+    - spec: cuda@11.0.194
+      prefix: /soft/visualization/cuda-11.0.2
+    buildable: false
+  mvapich2:
+    externals:
+    - spec: mvapich2@2.2~cuda~debug~regcache~wrapperrpath
+      prefix: /soft/libraries/mpi/mvapich2/gcc
+    buildable: false
+  rdma-core:
+    externals:
+    - spec: rdma-core@22.4
+      prefix: /usr
+    buildable: false
