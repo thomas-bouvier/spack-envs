@@ -6,13 +6,13 @@ spack:
   - /root/mochi-spack-packages
   packages:
     magma:
-      variants: [+cuda cuda_arch=70]
+      variants: [+cuda cuda_arch=60]
     nccl:
-      variants: [+cuda cuda_arch=70]
+      variants: [+cuda cuda_arch=60]
     py-horovod:
-      variants: [+cuda cuda_arch=70 tensor_ops=nccl]
+      variants: [+cuda cuda_arch=60 tensor_ops=nccl]
     py-torch:
-      variants: [+cuda cuda_arch=70 +nccl +cudnn +magma +distributed]
+      variants: [+cuda cuda_arch=60 +nccl +cudnn +magma +distributed]
   specs:
   - cuda@11.8
   - nccl@2.11.4-1 # https://github.com/horovod/horovod/issues/3831
@@ -32,4 +32,4 @@ spack:
   - py-matplotlib
   - py-horovod@0.26.1 controllers=mpi frameworks=pytorch
   - mochi-thallium@main ^argobots ^mercury@git.d34cec49a18621c64b2be2bfce69d5b3e988ceab ~boostsys ~checksum +ofi +debug ^mochi.libfabric +cuda +debug fabrics=tcp,rxm,verbs
-  view: /mnt/view/chifflot
+  view: /mnt/view/chifflot/p100
