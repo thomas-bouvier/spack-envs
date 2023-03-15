@@ -5,6 +5,7 @@ spack:
     - /lus/theta-fs0/projects/VeloC/runderwood/spack/cooley/opt/spack
   repos:
   - /home/tbouvier/git/mochi-spack-packages
+  - /home/tbouvier/git/robertu94-spack-packages
   compilers:
   - compiler:
       spec: gcc@4.8.5
@@ -189,6 +190,7 @@ spack:
   - cuda@11
   - cudnn@8.4.0
   - mpi
+  - mpigdb
   - python@3.10
   - py-pip
   - py-ruamel-yaml
