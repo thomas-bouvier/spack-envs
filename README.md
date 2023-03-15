@@ -8,7 +8,7 @@ git clone https://github.com/thomas-bouvier/spack-envs.git ~/spack-envs
 
 ## Locally
 
-```
+```console
 spack config --scope defaults edit config
 install_tree: $spack/opt/spack
 build_stage: $user_cache_path/stage
@@ -19,8 +19,16 @@ spack install
 
 ## G5k
 
-```
+```console
 spack config --scope defaults edit config
 install_tree: /mnt/spack
 build_stage: /tmp/spack-stage
 ```
+
+## ANL
+
+### Cooley
+
+Before using Spack to compile stuff on Cooley, we recommend to run `use_build_cooley` to get access to newer gcc, cmake, and mvapich versions.
+
+### ThetaGPU

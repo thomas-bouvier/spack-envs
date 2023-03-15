@@ -190,7 +190,7 @@ spack:
   - cuda@11
   - cudnn@8.4.0
   - mpi
-  - mpigdb
+  - mpigdb ^elfutils ~debuginfod
   - python@3.10
   - py-pip
   - py-ruamel-yaml
