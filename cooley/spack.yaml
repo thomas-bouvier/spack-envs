@@ -191,6 +191,8 @@ spack:
   - cudnn@8.4.0
   - mpi
   - mpigdb ^elfutils ~debuginfod
+  - nccl@2.11.4-1 # https://github.com/horovod/horovod/issues/3831
+  - nccl-tests
   - python@3.10
   - py-pip
   - py-ruamel-yaml
