@@ -9,6 +9,8 @@ spack:
       variants: [+cuda cuda_arch=60]
     nccl:
       variants: [+cuda cuda_arch=60]
+    nccl-tests:
+      variants: [+cuda cuda_arch=60]
     py-horovod:
       variants: [+cuda cuda_arch=60 tensor_ops=nccl]
     py-torch:
