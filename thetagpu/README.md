@@ -15,8 +15,7 @@ qsub -I -n 1 -t 60 -A VeloC -q single-gpu
 # set up spack environment
 ```
 
-Networking
-----------
+## Networking
 
 ThetaGPU uses an InfiniBand network.  The corresponding transport in Mercury
 is `verbs://`, using the `fabrics=rxm,verbs` variant in the libfabric package.
@@ -28,8 +27,7 @@ problematic in some libfabric releases.
 The `FI_OFI_RXM_USE_SRX` envrionment variable should be set to 1 to enable
 shared receive contexts; this is expected to improve scalability.
 
-Job management
---------------
+## Job management
 
 Theta uses the Cobalt workload manager. `job.qsub` is an example
 of job file. Please modify the header (lines starting with `#COBALT`)
