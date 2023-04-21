@@ -27,6 +27,7 @@ spack:
   - py-filelock
   - py-wandb
   - py-continuum
+  - py-timm
   - py-nvidia-dali@1.22.0-cuda110
   - py-torch@1.13.1 ~gloo
   - py-torchvision
@@ -34,5 +35,5 @@ spack:
   - py-bokeh
   - py-matplotlib
   - py-horovod@0.26.1 controllers=mpi frameworks=pytorch
-  - mochi-thallium@main ^argobots ^mercury ~boostsys ~checksum +ofi +debug ^mochi.libfabric +cuda +debug fabrics=tcp,rxm
+  - mochi.mochi-thallium ^argobots ^mercury ~boostsys ~checksum +ofi +debug ^mochi.libfabric +cuda +debug fabrics=tcp,rxm
   view: /mnt/view/chifflot-p100
