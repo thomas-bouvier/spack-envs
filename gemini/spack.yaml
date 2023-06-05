@@ -3,6 +3,7 @@ spack:
     install_tree: /mnt/spack
     build_stage: /tmp/spack-stage
   repos:
+  - /root/spack-packages
   - /root/mochi-spack-packages
   packages:
     magma:
@@ -30,17 +31,19 @@ spack:
   - nccl-tests
   - python@3.10
   - py-pip
+  - py-pybind11
   - py-ruamel-yaml
   - py-filelock
   - py-wandb
   - py-continuum
   - py-timm
-  - py-nvidia-dali@1.22.0-cuda110
+  - tbouvier.py-nvidia-dali@1.26.0-cuda110
   - py-torch@1.13.1 ~gloo
-  - py-torchvision
   - py-torchsummary
   - py-bokeh
   - py-matplotlib
-  - py-horovod@0.26.1 controllers=mpi frameworks=pytorch
+  - py-horovod@0.28.0 controllers=mpi frameworks=pytorch
   - mochi.mochi-thallium ^argobots ^mercury ~boostsys ~checksum +ofi +debug ^mochi.libfabric +cuda +debug fabrics=tcp,rxm,verbs
+  concretizer:
+    unify: true
   view: /mnt/view/gemini
