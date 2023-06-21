@@ -17,12 +17,15 @@ spack:
     py-torch:
       variants: [+cuda cuda_arch=60 +nccl +cudnn +magma +distributed]
   specs:
+  # Precedence is important. These packages will be picked up in the mochi repo.
+  - mochi-thallium ^argobots ^mercury +boostsys +ofi +debug ^libfabric +cuda +gdrcopy +debug fabrics=tcp,rxm,verbs
   - cuda@11.8
   - cudnn@8.4.0
   - openmpi@4.1.2
   - nccl@2.11.4-1 # https://github.com/horovod/horovod/issues/3831
   - nccl-tests
   - python@3.10
+  - nvtx +python
   - py-pip
   - py-pybind11
   - py-ruamel-yaml
@@ -30,13 +33,12 @@ spack:
   - py-wandb
   - py-continuum
   - py-timm
-  - tbouvier.py-nvidia-dali@1.26.0-cuda110
-  - py-torch@1.13.1 ~gloo
+  - tbouvier.py-nvidia-dali@1.27.0-dev-cuda110
+  - py-torch@2.0.1 ~gloo
   - py-torchsummary
   - py-bokeh
   - py-matplotlib
   - py-horovod@0.28.0 controllers=mpi frameworks=pytorch
-  - mochi.mochi-thallium ^argobots ^mercury ~boostsys ~checksum +ofi +debug ^mochi.libfabric +cuda +debug fabrics=tcp,rxm
   concretizer:
     unify: true
   view: /mnt/view/chifflot-p100
