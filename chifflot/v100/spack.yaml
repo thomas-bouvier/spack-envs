@@ -39,7 +39,6 @@ spack:
   - py-bokeh
   - py-matplotlib
   - py-horovod@0.28.0 controllers=mpi frameworks=pytorch
-  - mochi.mochi-thallium@0.11.1 ^argobots ^mercury ~boostsys ~checksum +ofi +debug ^mochi.libfabric +cuda +debug fabrics=tcp,rxm
   concretizer:
     unify: true
   view: /mnt/view/chifflot-v100
