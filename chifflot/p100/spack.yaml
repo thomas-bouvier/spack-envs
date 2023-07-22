@@ -7,7 +7,7 @@ spack:
   packages:
     all:
       providers:
-        mpi: [openmpi]
+        mpi: [mpich]
       compiler:
       - gcc@10.4.0
     magma:
@@ -20,11 +20,12 @@ spack:
       variants: [+cuda cuda_arch=60 tensor_ops=nccl]
     py-torch:
       variants: [+cuda cuda_arch=60 +nccl +cudnn +magma +distributed]
-    openmpi:
-      externals:
-      - spec: openmpi@4.1.5
-        modules:
-        - openmpi/4.1.5_gcc-10.4.0
+    # https://github.com/horovod/horovod/issues/3949
+    #openmpi:
+    #  externals:
+    #  - spec: openmpi@4.1.5
+    #    modules:
+    #    - openmpi/4.1.5_gcc-10.4.0
     rdma-core:
       externals:
       - spec: rdma-core@41.0
