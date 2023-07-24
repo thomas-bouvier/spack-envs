@@ -54,6 +54,7 @@ spack:
   - py-bokeh
   - py-matplotlib
   - py-horovod@0.28 controllers=mpi frameworks=pytorch
+  - nano
   concretizer:
     unify: true
   view: /mnt/view/chifflot-p100
