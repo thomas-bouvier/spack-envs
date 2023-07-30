@@ -1,6 +1,6 @@
 spack:
   config:
-    install_tree: /mnt/spack
+    install_tree: /srv/storage/kerdatadatasets@storage1.lyon.grid5000.fr/spack
     build_stage: /tmp/spack-stage
   repos:
   - /home/tbouvier/spack-lyon/mochi-spack-packages
@@ -26,11 +26,11 @@ spack:
     #  - spec: openmpi@4.1.5
     #    modules:
     #    - openmpi/4.1.5_gcc-10.4.0
-    rdma-core:
-      externals:
-      - spec: rdma-core@41.0
-        modules:
-        - rdma-core/41.0_gcc-10.4.0
+    #rdma-core:
+    #  externals:
+    #  - spec: rdma-core@41.0
+    #    modules:
+    #    - rdma-core/41.0_gcc-10.4.0
   specs:
   # Precedence is important. These packages will be picked up in the mochi repo.
   - mochi-thallium ^argobots ^mercury +boostsys +ofi +debug ^libfabric +cuda +debug fabrics=tcp,rxm,verbs
@@ -57,7 +57,7 @@ spack:
   - nano
   concretizer:
     unify: true
-  view: /mnt/view/gemini
+  view: /srv/storage/kerdatadatasets@storage1.lyon.grid5000.fr/view/gemini
   compilers:
   - compiler:
       spec: gcc@=10.4.0

@@ -1,13 +1,13 @@
 spack:
   config:
-    install_tree: /mnt/spack
+    install_tree: /srv/storage/kerdatalille@storage1.lille.grid5000.fr/spack
     build_stage: /tmp/spack-stage
   repos:
   - /home/tbouvier/spack-lille/mochi-spack-packages
   packages:
     all:
       providers:
-        mpi: [mpich]
+        mpi: [openmpi]
       compiler:
       - gcc@10.4.0
     magma:
@@ -24,13 +24,14 @@ spack:
     #openmpi:
     #  externals:
     #  - spec: openmpi@4.1.5
+    #    prefix: /grid5000/spack/v1/opt/spack/linux-debian11-x86_64_v2/gcc-10.4.0/openmpi-4.1.5-34kj6dkmk4pg3e3nqniaidqj7l2rkkww
     #    modules:
     #    - openmpi/4.1.5_gcc-10.4.0
-    rdma-core:
-      externals:
-      - spec: rdma-core@41.0
-        modules:
-        - rdma-core/41.0_gcc-10.4.0
+    #rdma-core:
+    #  externals:
+    #  - spec: rdma-core@41.0
+    #    modules:
+    #    - rdma-core/41.0_gcc-10.4.0
   specs:
   # Precedence is important. These packages will be picked up in the mochi repo.
   - mochi-thallium ^argobots ^mercury +boostsys +ofi +debug ^libfabric +cuda +debug fabrics=tcp,rxm,verbs
@@ -57,7 +58,7 @@ spack:
   - nano
   concretizer:
     unify: true
-  view: /mnt/view/chifflot-v100
+  view: /srv/storage/kerdatalille@storage1.lille.grid5000.fr/view/chifflot-v100
   compilers:
   - compiler:
       spec: gcc@=10.4.0
