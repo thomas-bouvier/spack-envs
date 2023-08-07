@@ -11,7 +11,7 @@ git clone https://github.com/thomas-bouvier/spack-envs.git ~/spack-envs
 ```console
 spack config --scope defaults edit config
 install_tree: $spack/opt/spack
-build_stage: $user_cache_path/stage
+build_stage: $spack/var/spack/stage
 
 spack env activate ~/Dev/spack-envs/local
 spack install
@@ -21,7 +21,7 @@ spack install
 
 ```console
 spack config --scope defaults edit config
-install_tree: /mnt/spack
+install_tree: /my-spack/spack
 build_stage: /tmp/spack-stage
 ```
 

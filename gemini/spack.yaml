@@ -1,6 +1,6 @@
 spack:
   config:
-    install_tree: /mnt/spack
+    install_tree: /my-spack/spack
     build_stage: /tmp/spack-stage
   repos:
   - /home/tbouvier/spack-lyon/mochi-spack-packages
@@ -57,7 +57,7 @@ spack:
   - nano
   concretizer:
     unify: true
-  view: /mnt/view/gemini
+  view: /my-spack/view/gemini
   compilers:
   - compiler:
       spec: gcc@=10.4.0
