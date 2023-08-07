@@ -1,6 +1,6 @@
 spack:
   config:
-    install_tree: /srv/storage/kerdatadatasets@storage1.lyon.grid5000.fr/spack
+    install_tree: /mnt/spack
     build_stage: /tmp/spack-stage
   repos:
   - /home/tbouvier/spack-lyon/mochi-spack-packages
@@ -57,7 +57,7 @@ spack:
   - nano
   concretizer:
     unify: true
-  view: /srv/storage/kerdatadatasets@storage1.lyon.grid5000.fr/view/gemini
+  view: /mnt/view/gemini
   compilers:
   - compiler:
       spec: gcc@=10.4.0

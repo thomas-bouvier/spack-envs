@@ -170,4 +170,5 @@ spack:
   - py-nvidia-dali@1.27.0-cuda110
   - py-torchsummary
   - py-horovod@0.26.1 controllers=mpi frameworks=pytorch
+  - nano
   view: /home/tbouvier/view/thetagpu

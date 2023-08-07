@@ -1,6 +1,6 @@
 spack:
   config:
-    install_tree: /srv/storage/kerdatalille@storage1.lille.grid5000.fr/spack
+    install_tree: /mnt/spack
     build_stage: /tmp/spack-stage
   repos:
   - /home/tbouvier/spack-lille/mochi-spack-packages
@@ -58,7 +58,7 @@ spack:
   - nano
   concretizer:
     unify: true
-  view: /srv/storage/kerdatalille@storage1.lille.grid5000.fr/view/chifflot-v100
+  view: /mnt/view/chifflot-v100
   compilers:
   - compiler:
       spec: gcc@=10.4.0
