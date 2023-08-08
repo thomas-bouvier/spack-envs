@@ -5,10 +5,11 @@ spack:
     py-torch:
       variants: [+distributed]
   specs:
+  - mochi-thallium@0.11.1 ^argobots ^mercury ~boostsys ~checksum +ofi +debug
+    ^libfabric +debug fabrics=tcp,rxm
   - openmpi@4.1.2
-  - python@3.10
+  #- python@3.10 # py-jupyter-server can't concretize with anything above Python 3.8
   - nvtx
-  - py-pip
   - py-pre-commit
   - py-ruamel-yaml
   - py-filelock
@@ -20,8 +21,9 @@ spack:
   - py-bokeh
   - py-matplotlib
   - py-horovod@master controllers=mpi frameworks=pytorch tensor_ops=mpi
-  - mochi.mochi-thallium@0.11.1 ^argobots ^mercury ~boostsys ~checksum +ofi +debug
-    ^mochi.libfabric +debug fabrics=tcp,rxm
+  - py-jupyter-server
+  concretizer:
+    unify: true
   view: true
   compilers:
   - compiler:

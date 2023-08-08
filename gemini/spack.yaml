@@ -7,7 +7,7 @@ spack:
   packages:
     all:
       providers:
-        mpi: [mpich]
+        mpi: [openmpi]
       compiler:
       - gcc@10.4.0
     magma:
