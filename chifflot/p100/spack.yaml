@@ -32,10 +32,15 @@ spack:
     #  - spec: rdma-core@41.0
     #    modules:
     #    - rdma-core/41.0_gcc-10.4.0
+    cuda:
+      externals:
+      - spec: cuda@11.7.1
+        modules:
+        - cuda/11.7.1_gcc-10.4.0
   specs:
   # Precedence is important. These packages will be picked up in the mochi repo.
   - mochi-thallium ^argobots ^mercury +boostsys +ofi +debug ^libfabric +cuda +debug fabrics=tcp,rxm,verbs
-  - cuda@11.8
+  - cuda
   - cudnn@8.4
   - mpi
   - nccl
