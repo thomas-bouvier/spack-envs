@@ -21,7 +21,7 @@ spack:
   - py-bokeh
   - py-matplotlib
   - py-horovod@master controllers=mpi frameworks=pytorch tensor_ops=mpi
-  - py-jupyter-server
+  - py-jupyter
   concretizer:
     unify: true
   view: true
