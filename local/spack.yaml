@@ -7,7 +7,7 @@ spack:
   specs:
   - mochi-thallium@0.11.1 ^argobots ^mercury ~boostsys ~checksum +ofi +debug
     ^libfabric +debug fabrics=tcp,rxm
-  - openmpi@4.1.2
+  - openmpi
   #- python@3.10 # py-jupyter-server can't concretize with anything above Python 3.8
   - nvtx
   - py-pre-commit
