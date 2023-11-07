@@ -16,12 +16,16 @@ spack:
   - py-wandb
   - py-continuum
   - py-timm
-  - py-torch@2.0.1 ~gloo ~fbgemm ~kineto
+  - py-torch@2.1 ~gloo ~fbgemm ~kineto
   - py-torchsummary
   - py-bokeh
   - py-matplotlib
   - py-horovod@master controllers=mpi frameworks=pytorch tensor_ops=mpi
   - py-jupyter
+  - py-h5py
+  - nano
+  - htop
+  - openssl@3
   concretizer:
     unify: true
   view: true
