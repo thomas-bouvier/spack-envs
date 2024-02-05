@@ -5,10 +5,10 @@ spack:
     py-torch:
       variants: [+distributed]
   specs:
-  - mochi-thallium@0.11.1 ^argobots ^mercury ~boostsys ~checksum +ofi +debug
-    ^libfabric +debug fabrics=tcp,rxm
+  - mochi-thallium@0.11.1 ^argobots ^mercury ~boostsys ~checksum +ofi +debug ^libfabric
+    +debug fabrics=tcp,rxm
   - openmpi
-  #- python@3.10 # py-jupyter-server can't concretize with anything above Python 3.8
+  - python@3.11
   - nvtx
   - py-pre-commit
   - py-ruamel-yaml
@@ -22,6 +22,8 @@ spack:
   - py-matplotlib
   - py-horovod@master controllers=mpi frameworks=pytorch tensor_ops=mpi
   - py-jupyter
+  - py-jupyterlab
+  - opencv +python3 +imgcodecs +imgproc
   - py-h5py
   - nano
   - htop
@@ -31,15 +33,15 @@ spack:
   view: true
   compilers:
   - compiler:
-      spec: gcc@=13.1.1
+      spec: gcc@=13.2.1
       paths:
         cc: /usr/bin/gcc
         cxx: /usr/bin/g++
         f77: /usr/bin/gfortran
         fc: /usr/bin/gfortran
       flags: {}
-      operating_system: fedora38
-      target: x86_64
+      operating_system: fedora_asahi_remix39
+      target: aarch64
       modules: []
       environment: {}
       extra_rpaths: []
