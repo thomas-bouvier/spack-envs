@@ -2,10 +2,9 @@ if [ -f /etc/zshrc ]; then
     . /etc/zshrc
 fi
 
-function use_build_cooley {
-    # other ALCF machines
+function use_cooley {
     if hostname | grep cooley &>/dev/null || hostname | grep cc &> /dev/null; then
-        echo "loading cooley spack"
+        echo "Loading Spack for Cooley"
        soft add +gcc-8.2.0
        soft add +cmake-3.20.4
        soft add +cuda-11.0.2
@@ -17,10 +16,9 @@ function use_build_cooley {
     export SPACK_USER_CACHE_PATH="$SPACK_USER_CONFIG_PATH"
 }
 
-function use_build_thetagpu {
-    # other ALCF machines
+function use_thetagpu {
     if hostname | grep thetagpu &>/dev/null; then
-       echo "loading thetagpu spack"
+       echo "Loading Spack for ThetaGPU"
        source ${HOME}/git/spack-thetagpu/share/spack/setup-env.sh
        export CRAYPE_LINK_TYPE=dynamic
        export clustername=thetagpu
@@ -31,4 +29,16 @@ function use_build_thetagpu {
      fi
     export SPACK_USER_CONFIG_PATH="$HOME/.spack/$clustername"
     export SPACK_USER_CACHE_PATH="$SPACK_USER_CONFIG_PATH"
+}
+
+function use_polaris {
+    if hostname -f  | grep polaris &>/dev/null; then
+        echo "Loading Spack for Polaris"
+        module swap PrgEnv-nvhpc PrgEnv-gnu
+        module load cudatoolkit-standalone
+        source ${HOME}/git/spack-polaris/share/spack/setup-env.sh
+        export http_proxy="http://proxy-01.pub.alcf.anl.gov:3128"
+        export https_proxy="http://proxy-01.pub.alcf.anl.gov:3128"
+        export ftp_proxy="http://proxy-01.pub.alcf.anl.gov:3128"
+    fi
 }
