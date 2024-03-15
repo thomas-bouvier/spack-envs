@@ -1,5 +1,7 @@
 # ThetaGPU
 
+From [this guide](https://github.com/mochi-hpc-experiments/platform-configurations/blob/main/ANL/ThetaGPU/README.md).
+
 ## Programming environment
 
 We recommend using the default gcc, OpenMPI, and OFED packages on ThetaGPU

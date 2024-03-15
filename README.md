@@ -48,10 +48,14 @@ build_stage: /tmp/spack-stage
 
 ## Argonne National Lab
 
-### ThetaGPU
-
-To be done
+Copy the relevant content of `.zshrc` into the frontend `.zshrc`.
 
 ### Polaris
 
-To be done
+Once you are logged in on a compute node, activate the environment and install it:
+
+```console
+use_polaris
+spack env activate git/spack-envs/polaris
+spack install
+```

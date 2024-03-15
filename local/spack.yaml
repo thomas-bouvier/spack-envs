@@ -16,7 +16,7 @@ spack:
   - py-wandb
   - py-continuum
   - py-timm
-  - py-torch@2.1 ~gloo ~fbgemm ~kineto
+  - py-torch@2.2 ~gloo ~fbgemm ~kineto +cuda
   - py-torchsummary
   - py-bokeh
   - py-matplotlib

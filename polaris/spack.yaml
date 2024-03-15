@@ -19,7 +19,7 @@ spack:
   - py-wandb
   - py-bokeh
   - py-matplotlib
-  - py-torch@2.2 ~gloo
+  - py-torch@2.2 ~gloo ~valgrind
   - py-torchvision
   - py-continuum
   - py-timm
@@ -47,6 +47,7 @@ spack:
       - PrgEnv-gnu
       - gcc/12.2.0
       - cudatoolkit-standalone
+      - cray-mpich/8.1.25
       - libfabric/1.15.2.0 # don't forget that one
       environment: {}
       extra_rpaths: []
