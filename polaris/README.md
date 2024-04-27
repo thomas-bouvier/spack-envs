@@ -5,10 +5,10 @@ From [this guide](https://github.com/mochi-hpc-experiments/platform-configuratio
 ## Programming environment
 
 We recommend using the system-provided GNU compiler as specified in the
-example spack configurations.  The GNU compiler can also be loaded in
+example spack configurations. The GNU compiler can also be loaded in
 your normal terminal environment (outside of Spack) by running `module
-swap PrgEnv-nvhpc PrgEnv-gnu`.  You should also run `module
-load cudatoolkit-standalone` to gain access to CUDA libraries that may be
+swap PrgEnv-nvhpc PrgEnv-gnu`. You should also run `module
+load nvhpc-mixed` to gain access to CUDA libraries that may be
 required for executables built within this Spack environment.
 
 ## Networking
@@ -23,7 +23,7 @@ This Spack environment also relies on system CUDA and Cray MPICH libraries.
 
 ## Job management
 
-Polaris uses the PBS Pro workload manager.  `job.qsub` is an example of job
+Polaris uses the PBS Pro workload manager. `job.qsub` is an example of job
 file. Please modify the header to use your project allocation and set
 relevant parameters. You can refer to ALCF documentation for more
 information.
