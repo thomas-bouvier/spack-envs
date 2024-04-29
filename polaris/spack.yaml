@@ -23,7 +23,7 @@ spack:
   - py-torchvision
   - py-continuum
   - py-timm
-  - py-nvidia-dali@1.27.0-cuda120
+  - py-nvidia-dali@1.36.0-cuda120
   - py-torchsummary
   - py-horovod@master controllers=mpi frameworks=pytorch
   - nano
