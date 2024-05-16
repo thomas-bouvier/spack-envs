@@ -32,10 +32,8 @@ function use_thetagpu {
 }
 
 function use_polaris {
-    if hostname -f  | grep polaris &>/dev/null; then
+    if hostname -f | grep polaris &>/dev/null; then
         echo "Loading Spack for Polaris"
-        module swap PrgEnv-nvhpc PrgEnv-gnu
-        module load nvhpc-mixed
         source ${HOME}/git/spack-polaris/share/spack/setup-env.sh
         export http_proxy="http://proxy-01.pub.alcf.anl.gov:3128"
         export https_proxy="http://proxy-01.pub.alcf.anl.gov:3128"
