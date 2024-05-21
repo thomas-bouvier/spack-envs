@@ -35,6 +35,8 @@ function use_polaris {
     if hostname -f | grep polaris &>/dev/null; then
         echo "Loading Spack for Polaris"
         source ${HOME}/git/spack-polaris/share/spack/setup-env.sh
+        module swap PrgEnv-nvhpc PrgEnv-gnu
+        module load nvhpc-mixed
         export http_proxy="http://proxy-01.pub.alcf.anl.gov:3128"
         export https_proxy="http://proxy-01.pub.alcf.anl.gov:3128"
         export ftp_proxy="http://proxy-01.pub.alcf.anl.gov:3128"
