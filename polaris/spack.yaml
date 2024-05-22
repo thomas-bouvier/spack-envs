@@ -7,7 +7,6 @@ spack:
   - mochi-thallium ^argobots ^mercury +boostsys +ofi +debug ^libfabric +cuda +debug fabrics=tcp,rxm,verbs
   - mochi-margo ^json-c@0.13.0
   - cmake
-  - cuda@12
   - cudnn
   - mpi
   - nccl
@@ -17,7 +16,7 @@ spack:
   - py-pip
   - py-ruamel-yaml
   - py-filelock
-  - py-matplotlib
+  #- py-matplotlib
   - py-torch@2.2 ~gloo ~valgrind
   - py-torchvision
   - py-continuum
@@ -66,8 +65,9 @@ spack:
     cuda:
       buildable: false
       externals:
-      - spec: cuda@12.2
-        prefix: /opt/nvidia/hpc_sdk/Linux_x86_64/23.9/cuda/12.2
+      - spec: cuda@12.2.2
+        modules:
+        - cudatoolkit-standalone/12.2.2
     mercury:
       buildable: true
       variants: ~boostsys ~checksum
