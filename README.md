@@ -59,3 +59,9 @@ use_polaris
 spack env activate git/spack-envs/polaris
 spack install
 ```
+
+### Last successful installations:
+
+| Date | `spack-envs` commit | `spack-packages` commit | Spack commit | Notes |
+|----------|----------|----------|----------|----------|
+| 2024-01-25 | `20e8e7645baf8d424aa128810c416da5a91280f3` | `ad655c13117b667a580af161788d9d85bef67d98` | `d079aaa08336d7805fc0361669e1d16b8d5de4bf` | Contents of `spack-packages/packages/py-continuum/package.py` copied into `spack/var/spack/repos/builtin/packages/py-continuum/package.py` |
