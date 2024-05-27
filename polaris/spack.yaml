@@ -19,7 +19,7 @@ spack:
   #- py-matplotlib
   - py-torch@2.2 ~gloo ~valgrind
   - py-torchvision
-  - py-continuum
+  - py-continuum@develop
   - py-timm
   - py-nvidia-dali@1.36.0-cuda120
   - py-khorovod@develop controllers=mpi frameworks=pytorch
