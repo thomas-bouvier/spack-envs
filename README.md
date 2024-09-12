@@ -1,14 +1,16 @@
 # spack-envs
 
+My reproducible Spack environments of some HPC platforms I use.
+
 ```
 git clone -c feature.manyFiles=true https://github.com/spack/spack.git ~/spack
 git clone https://github.com/mochi-hpc/mochi-spack-packages.git ~/mochi-spack-packages
 git clone https://github.com/thomas-bouvier/spack-envs.git ~/spack-envs
 ```
 
-## Locally
+## 🖥️ Locally
 
-Using Fedora Asahi Remix 39, make sure that dev tools are installed on the system:
+Using Fedora Asahi Remix 40, make sure that dev tools are installed on the system:
 
 ```console
 dnf group install "Development Tools"
@@ -17,7 +19,7 @@ dnf group install "C Development Tools and Libraries"
 dnf install gcc-gfortran
 ```
 
-Change the default configuration is needed:
+Change the default configuration if needed:
 
 ```console
 spack config --scope defaults edit config
@@ -38,7 +40,7 @@ spack install
 |----------|----------|----------|
 | 2024-01-15 | `` |  |
 
-## Grid5000
+## 🇫🇷 Grid5000
 
 ```console
 spack config --scope defaults edit config
@@ -46,11 +48,18 @@ install_tree: /my-spack/spack
 build_stage: /tmp/spack-stage
 ```
 
-## Argonne National Lab
+## 🇺🇸 Argonne National Lab
 
 Copy the relevant content of `.zshrc` into the frontend `.zshrc`.
 
 ### Polaris
+
+Change the default configuration if needed:
+
+```console
+spack config --scope defaults edit config
+build_stage: /local/scratch/tbouvier/spack-stage
+```
 
 Once you are logged in on a compute node, activate the environment and install it:
 
@@ -64,4 +73,5 @@ spack install
 
 | Date | `spack-envs` commit | `spack-packages` commit | Spack commit | Notes |
 |----------|----------|----------|----------|----------|
+| 2024-09-13 | | |
 | 2024-01-25 | `20e8e7645baf8d424aa128810c416da5a91280f3` | `ad655c13117b667a580af161788d9d85bef67d98` | `d079aaa08336d7805fc0361669e1d16b8d5de4bf` | Contents of `spack-packages/packages/py-continuum/package.py` copied into `spack/var/spack/repos/builtin/packages/py-continuum/package.py` |

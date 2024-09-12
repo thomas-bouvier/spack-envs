@@ -5,7 +5,7 @@ spack:
   specs:
   # Precedence is important. These packages will be picked up in the mochi repo.
   - mochi-thallium ^argobots ^mercury +boostsys +ofi +debug ^libfabric +cuda +debug fabrics=tcp,rxm,verbs
-  - mochi-margo ^json-c@0.13.0
+  - mochi-margo
   - cmake
   - cudnn
   - mpi
@@ -21,15 +21,21 @@ spack:
   - py-torchvision
   - py-continuum@develop
   - py-timm
-  - py-nvidia-dali@1.36.0-cuda120
+  - py-nvidia-dali@1.41.0-cuda120
   - py-khorovod@develop controllers=mpi frameworks=pytorch
   - nano
-  - openssh ~asspi # https://github.com/spack/spack/issues/43953
   view: /home/tbouvier/view/polaris
   modules:
     prefix_inspections:
       lib: [LD_LIBRARY_PATH]
       lib64: [LD_LIBRARY_PATH]
+  mirrors:
+    mochi-buildcache:
+      url: oci://ghcr.io/mochi-hpc/mochi-spack-buildcache
+      signed: false
+  config:
+    install_tree:
+      padded_length: 128
   compilers:
   - compiler:
       spec: gcc@12.3
@@ -50,24 +56,24 @@ spack:
       extra_rpaths: []
   packages:
     all:
-      providers:
-        mpi: [ cray-mpich ]
-        pkgconfig: [ pkg-config ]
-      compiler:
-      - gcc@12.3
-      target:
-      - zen3
+      require:
+      - "%gcc@12.3"
+      - "target=zen3"
+    mpi:
+      require:
+      - cray-mpich
+    json-c:
+      require:
+      - "@0.13.0"
+    pkgconfig:
+      require:
+      - pkg-config
     cray-mpich:
       buildable: false
       externals:
-      - spec: cray-mpich@8.1.28+wrappers
-        modules: [cray-mpich/8.1.28, libfabric/1.15.2.0]
-    cuda:
-      buildable: false
-      externals:
-      - spec: cuda@12.2.2
+      - spec: cray-mpich@8.1.28
         modules:
-        - cudatoolkit-standalone/12.2.2
+        - cray-mpich/8.1.28
     mercury:
       buildable: true
       variants: ~boostsys ~checksum
@@ -121,6 +127,11 @@ spack:
       buildable: false
       externals:
       - spec: pkg-config@0.29.2
+        prefix: /usr
+    git:
+      buildable: false
+      externals:
+      - spec: git@2.35.3
         prefix: /usr
     magma:
       variants: [+cuda cuda_arch=80]
