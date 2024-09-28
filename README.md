@@ -61,6 +61,12 @@ spack config --scope defaults edit config
 build_stage: /local/scratch/tbouvier/spack-stage
 ```
 
+Compilations lasting for more than one hour should be performed in the `preemptable` queue.
+
+```console
+qsub -I -l select=1:ngpus=1:system=polaris -q preemptable -l walltime=04:00:00 -A VeloC -l filesystems=home
+```
+
 Once you are logged in on a compute node, activate the environment and install it:
 
 ```console
