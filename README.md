@@ -79,5 +79,5 @@ spack install
 
 | Date | `spack-envs` commit | `spack-packages` commit | Spack commit | Notes |
 |----------|----------|----------|----------|----------|
-| 2024-09-13 | | |
-| 2024-01-25 | `20e8e7645baf8d424aa128810c416da5a91280f3` | `ad655c13117b667a580af161788d9d85bef67d98` | `d079aaa08336d7805fc0361669e1d16b8d5de4bf` | Contents of `spack-packages/packages/py-continuum/package.py` copied into `spack/var/spack/repos/builtin/packages/py-continuum/package.py` |
+| 2024-09-28 | `863389f` | `bbacb27` | `a8d02bd` | |
+| 2024-01-25 | `20e8e76` | `ad655c1` | `d079aaa` | Contents of `spack-packages/packages/py-continuum/package.py` copied into `spack/var/spack/repos/builtin/packages/py-continuum/package.py` |
