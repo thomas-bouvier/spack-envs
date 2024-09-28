@@ -22,10 +22,10 @@ function use_thetagpu {
        source ${HOME}/git/spack-thetagpu/share/spack/setup-env.sh
        export CRAYPE_LINK_TYPE=dynamic
        export clustername=thetagpu
-       export HTTP_PROXY=http://theta-proxy.tmi.alcf.anl.gov:3128
-       export HTTPS_PROXY=http://theta-proxy.tmi.alcf.anl.gov:3128
-       export http_proxy=http://theta-proxy.tmi.alcf.anl.gov:3128
-       export https_proxy=http://theta-proxy.tmi.alcf.anl.gov:3128
+       export HTTP_PROXY="http://theta-proxy.tmi.alcf.anl.gov:3128"
+       export HTTPS_PROXY="http://theta-proxy.tmi.alcf.anl.gov:3128"
+       export http_proxy="http://theta-proxy.tmi.alcf.anl.gov:3128"
+       export https_proxy="http://theta-proxy.tmi.alcf.anl.gov:3128"
      fi
     export SPACK_USER_CONFIG_PATH="$HOME/.spack/$clustername"
     export SPACK_USER_CACHE_PATH="$SPACK_USER_CONFIG_PATH"
@@ -37,8 +37,22 @@ function use_polaris {
         source ${HOME}/git/spack-polaris/share/spack/setup-env.sh
         module swap PrgEnv-nvhpc PrgEnv-gnu
         module load nvhpc-mixed
-        export http_proxy="http://proxy-01.pub.alcf.anl.gov:3128"
-        export https_proxy="http://proxy-01.pub.alcf.anl.gov:3128"
-        export ftp_proxy="http://proxy-01.pub.alcf.anl.gov:3128"
+        export HTTP_PROXY="http://proxy.alcf.anl.gov:3128"
+        export HTTPS_PROXY="http://proxy.alcf.anl.gov:3128"
+        export http_proxy="http://proxy.alcf.anl.gov:3128"
+        export https_proxy="http://proxy.alcf.anl.gov:3128"
+        export ftp_proxy="http://proxy.alcf.anl.gov:3128"
+    fi
+}
+
+function use_sophia {
+    if hostname -f | grep sophia &>/dev/null; then
+        echo "Loading Spack for Sophia"
+        source ${HOME}/git/spack-sophia/share/spack/setup-env.sh
+        export HTTP_PROXY="http://proxy.alcf.anl.gov:3128"
+        export HTTPS_PROXY="http://proxy.alcf.anl.gov:3128"
+        export http_proxy="http://proxy.alcf.anl.gov:3128"
+        export https_proxy="http://proxy.alcf.anl.gov:3128"
+        export ftp_proxy="http://proxy.alcf.anl.gov:3128"
     fi
 }
