@@ -17,12 +17,12 @@ spack:
   - py-ruamel-yaml
   - py-filelock
   #- py-matplotlib
-  - py-torch@2.2 ~gloo ~valgrind
+  - py-torch@2.2 ~gloo ~valgrind ~caffe2
   - py-torchvision
   - py-continuum@develop
   - py-timm
   - py-nvidia-dali@1.41.0-cuda120
-  - py-khorovod@develop controllers=mpi frameworks=pytorch
+  - py-horovod@0.28.1 controllers=mpi frameworks=pytorch
   - nano
   view: /home/tbouvier/view/polaris
   modules:
