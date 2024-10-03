@@ -9,20 +9,19 @@ spack:
   - cmake
   - cudnn
   - mpi
-  - nccl
-  - nccl-tests
+  - nccl +cuda cuda_arch=80
+  - nccl-tests +cuda cuda_arch=80
+  - magma +cuda cuda_arch=80
+  - py-horovod@0.28.1 controllers=mpi frameworks=pytorch +cuda cuda_arch=80 tensor_ops=nccl
+  - py-torch@2.2 ~gloo ~valgrind ~caffe2 ~kineto +cuda cuda_arch=80 +nccl +cudnn +magma +distributed
   - python@3.11
   - nvtx +python
   - py-pip
   - py-ruamel-yaml
   - py-filelock
-  #- py-matplotlib
-  - py-torch@2.2 ~gloo ~valgrind ~caffe2
   - py-torchvision
   - py-continuum@develop
   - py-timm
-  - py-nvidia-dali@1.41.0-cuda120
-  - py-horovod@0.28.1 controllers=mpi frameworks=pytorch
   - nano
   view: /home/tbouvier/view/polaris
   modules:
@@ -52,6 +51,7 @@ spack:
       - gcc-native/12.3
       - nvhpc-mixed
       - libfabric
+      - cudatoolkit-standalone
       environment: {}
       extra_rpaths: []
   packages:
@@ -133,13 +133,10 @@ spack:
       externals:
       - spec: git@2.35.3
         prefix: /usr
-    magma:
-      variants: [+cuda cuda_arch=80]
-    nccl:
-      variants: [+cuda cuda_arch=80]
-    nccl-tests:
-      variants: [+cuda cuda_arch=80]
-    py-khorovod:
-      variants: [+cuda cuda_arch=80 tensor_ops=nccl]
-    py-torch:
-      variants: [+cuda cuda_arch=80 +nccl +cudnn +magma +distributed]
+    cuda:
+      buildable: false
+      externals:
+      - spec: cuda@12.3.2
+        prefix: /soft/compilers/cudatoolkit/cuda-12.3.2
+        modules:
+        - cudatoolkit-standalone/12.5.2
