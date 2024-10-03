@@ -40,7 +40,7 @@ spack install
 |----------|----------|----------|
 | 2024-01-15 | `` |  |
 
-## 🇫🇷 Grid5000
+## 🇫🇷 Grid'5000
 
 ```console
 spack config --scope defaults edit config
@@ -79,5 +79,5 @@ spack install
 
 | Date | `spack-envs` commit | `spack-packages` commit | Spack commit | Notes |
 |----------|----------|----------|----------|----------|
-| 2024-09-28 | `863389f` | `bbacb27` | `a8d02bd` | |
+| 2024-09-28 | `44162d3` | `bbacb27` | `a8d02bd` | |
 | 2024-01-25 | `20e8e76` | `ad655c1` | `d079aaa` | Contents of `spack-packages/packages/py-continuum/package.py` copied into `spack/var/spack/repos/builtin/packages/py-continuum/package.py` |
