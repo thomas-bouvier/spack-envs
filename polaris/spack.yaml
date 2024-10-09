@@ -139,4 +139,4 @@ spack:
       - spec: cuda@12.3.2
         prefix: /soft/compilers/cudatoolkit/cuda-12.3.2
         modules:
-        - cudatoolkit-standalone/12.5.2
+        - cudatoolkit-standalone/12.3.2
