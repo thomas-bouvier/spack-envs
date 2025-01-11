@@ -9,13 +9,14 @@ spack:
   - nccl +cuda cuda_arch=80
   - nccl-tests +cuda cuda_arch=80
   - magma +cuda cuda_arch=80
-  - py-torch ~gloo ~valgrind ~caffe2 ~kineto +cuda cuda_arch=80 +nccl +cudnn +magma +distributed
+  - py-torch@2.5 ~gloo ~valgrind ~caffe2 ~kineto +cuda cuda_arch=80 +nccl +cudnn +magma +distributed
   - py-nanotron@main
   - python@3.11
   - nvtx +python
   - py-pip
-  - nano
-  view: /home/tbouvier/view/polaris
+  - vim
+  - py-pure-sasl ~gssapi # error building py-kerberos
+  view: /home/tbouvier/view/polaris/nanotron
   modules:
     prefix_inspections:
       lib: [LD_LIBRARY_PATH]

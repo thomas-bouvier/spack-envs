@@ -23,7 +23,7 @@ spack:
   - py-continuum@develop
   - py-timm
   - nano
-  view: /home/tbouvier/view/polaris
+  view: /home/tbouvier/view/polaris/neomem
   modules:
     prefix_inspections:
       lib: [LD_LIBRARY_PATH]
