@@ -16,6 +16,7 @@ spack:
   - py-pip
   - vim
   - py-pure-sasl ~gssapi # error building py-kerberos
+  - py-deepspeed
   view: /home/tbouvier/view/polaris/nanotron
   modules:
     prefix_inspections:
