@@ -11,6 +11,7 @@ spack:
   - magma +cuda cuda_arch=80
   - py-torch@2.5 ~gloo ~valgrind ~caffe2 ~kineto +cuda cuda_arch=80 +nccl +cudnn +magma +distributed
   - py-nanotron@main
+  - py-datasets ^arrow +snappy
   - python@3.11
   - nvtx +python
   - py-pip
