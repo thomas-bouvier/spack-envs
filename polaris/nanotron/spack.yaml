@@ -4,6 +4,7 @@ spack:
   - /home/tbouvier/git/spack-packages
   specs:
   # Precedence is important. These packages will be picked up in the mochi repo.
+  - gcc
   - cudnn
   - mpi
   - nccl +cuda cuda_arch=80
