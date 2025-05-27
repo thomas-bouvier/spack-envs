@@ -1,7 +1,7 @@
 spack:
   repos:
   - /home/tbouvier/git/mochi-spack-packages
-  - /home/tbouvier/git/spack-packages
+  - /home/tbouvier/git/korovod-spack-packages/spack_repo/korovod
   specs:
   # Precedence is important. These packages will be picked up in the mochi repo.
   - gcc@12.3
@@ -11,7 +11,7 @@ spack:
   - nccl-tests +cuda cuda_arch=80
   - magma +cuda cuda_arch=80
   - py-torch@2.5 ~gloo ~valgrind ~caffe2 ~kineto +cuda cuda_arch=80 +nccl +cudnn +magma +distributed
-  - py-nanotron@main
+  - py-nanotron@main +datastates
   - py-datasets ^arrow +snappy
   - python@3.11
   - nvtx +python
