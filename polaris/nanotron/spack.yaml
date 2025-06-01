@@ -1,7 +1,7 @@
 spack:
   repos:
   - /home/tbouvier/git/mochi-spack-packages
-  - /home/tbouvier/git/spack-packages
+  - /home/tbouvier/git/korovod-spack-packages/spack_repo/korovod
   specs:
   # Precedence is important. These packages will be picked up in the mochi repo.
   - gcc@12.3
@@ -11,13 +11,13 @@ spack:
   - nccl-tests +cuda cuda_arch=80
   - magma +cuda cuda_arch=80
   - py-torch@2.5 ~gloo ~valgrind ~caffe2 ~kineto +cuda cuda_arch=80 +nccl +cudnn +magma +distributed
-  - py-nanotron@main
+  - py-nanotron@main +datastates +nanosets
   - py-datasets ^arrow +snappy
   - python@3.11
   - nvtx +python
   - py-pip
   - vim
-  - py-pure-sasl ~gssapi # error building py-kerberos
+  #- py-pure-sasl ~gssapi # error building py-kerberos
   - py-deepspeed
   view: /home/tbouvier/view/polaris/nanotron
   modules:
@@ -84,51 +84,51 @@ spack:
       externals:
       - spec: autoconf@2.69
         prefix: /usr
-    automake:
-      buildable: false
-      externals:
-      - spec: automake@1.15.1
-        prefix: /usr
-    gmake:
-      buildable: false
-      externals:
-      - spec: gmake@4.2.1
-        prefix: /usr
-    cmake:
-      buildable: false
-      externals:
-      - spec: cmake@3.27.7
-        prefix: /soft/spack/gcc/0.6.1/install/linux-sles15-x86_64/gcc-12.3.0/cmake-3.27.7-a435jtzvweeos2es6enirbxdjdqhqgdp
-    libtool:
-      buildable: false
-      externals:
-      - spec: libtool@2.4.6
-        prefix: /usr
-    openssl:
-      buildable: false
-      externals:
-      - spec: openssl@1.1.1d
-        prefix: /usr
-    m4:
-      buildable: false
-      externals:
-      - spec: m4@1.4.18
-        prefix: /usr
-    zlib:
-      buildable: false
-      externals:
-      - spec: zlib@1.2.11
-        prefix: /usr
-    pkg-config:
-      buildable: false
-      externals:
-      - spec: pkg-config@0.29.2
-        prefix: /usr
-    git:
-      buildable: false
-      externals:
-      - spec: git@2.35.3
-        prefix: /usr
+    #automake:
+    #  buildable: false
+    #  externals:
+    #  - spec: automake@1.15.1
+    #    prefix: /usr
+    #gmake:
+    #  buildable: false
+    #  externals:
+    #  - spec: gmake@4.2.1
+    #    prefix: /usr
+    #cmake:
+    #  buildable: false
+    #  externals:
+    #  - spec: cmake@3.27.7
+    #    prefix: /soft/spack/gcc/0.6.1/install/linux-sles15-x86_64/gcc-12.3.0/cmake-3.27.7-a435jtzvweeos2es6enirbxdjdqhqgdp
+    #libtool:
+    #  buildable: false
+    #  externals:
+    #  - spec: libtool@2.4.6
+    #    prefix: /usr
+    #openssl:
+    #  buildable: false
+    #  externals:
+    #  - spec: openssl@1.1.1d
+    #    prefix: /usr
+    #m4:
+    #  buildable: false
+    #  externals:
+    #  - spec: m4@1.4.18
+    #    prefix: /usr
+    #zlib:
+    #  buildable: false
+    #  externals:
+    #  - spec: zlib@1.2.11
+    #    prefix: /usr
+    #pkg-config:
+    #  buildable: false
+    #  externals:
+    #  - spec: pkg-config@0.29.2
+    #    prefix: /usr
+    #git:
+    #  buildable: false
+    #  externals:
+    #  - spec: git@2.35.3
+    #    prefix: /usr
     cuda:
       buildable: false
       externals:
