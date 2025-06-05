@@ -15,9 +15,9 @@ spack:
   - py-datasets ^arrow +snappy
   - python@3.11
   - nvtx +python
-  - py-pip
+  #- py-pip
   - vim
-  - py-pure-sasl ~gssapi # error building py-kerberos
+  #- py-pure-sasl ~gssapi # error building py-kerberos
   - py-deepspeed
   view: /home/tbouvier/view/polaris/nanotron
   modules:
@@ -53,8 +53,16 @@ spack:
   packages:
     all:
       require:
-      - "%gcc@12.3"
       - "target=zen3"
+    c:
+      require:
+      - gcc@12.3
+    cxx:
+      require:
+      - gcc@12.3
+    fortran:
+      require:
+      - gcc@12.3
     mpi:
       require:
       - cray-mpich
