@@ -75,18 +75,38 @@ spack:
     cray-mpich:
       buildable: false
       externals:
-      - spec: cray-mpich@8.1.28
-        modules:
-        - cray-mpich/8.1.28
+      #- spec: cray-mpich@8.1.28
+      #  modules:
+      #  - cray-mpich/8.1.28
+      - spec: cray-mpich@8.1.28 %gcc
+        prefix: /opt/cray/pe/mpich/8.1.28/ofi/gnu/12.3
+        extra_attributes:
+          environment:
+            prepend_path:
+              LD_LIBRARY_PATH: /opt/cray/libfabric/1.15.2.0/lib64
+      - spec: cray-mpich@8.1.28 %cce
+        prefix: /opt/cray/pe/mpich/8.1.28/ofi/cray/17.0
+        extra_attributes:
+          environment:
+            prepend_path:
+              LD_LIBRARY_PATH: /opt/cray/libfabric/1.15.2.0/lib64
+      - spec: cray-mpich@8.1.28 %nvhpc
+        prefix: /opt/cray/pe/mpich/8.1.28/ofi/nvidia/23.3
+        extra_attributes:
+          environment:
+            prepend_path:
+              LD_LIBRARY_PATH: /opt/cray/libfabric/1.15.2.0/lib64
     mercury:
       buildable: true
       variants: ~boostsys ~checksum
     libfabric:
       buildable: false
       externals:
-      - spec: libfabric@1.15.2.0
-        modules:
-        - libfabric/1.15.2.0
+      #- spec: libfabric@1.15.2.0
+      #  modules:
+      #  - libfabric/1.15.2.0
+      - spec: libfabric@1.15.2.0 fabrics=tcp,udp
+        prefix: /opt/cray/libfabric/1.15.2.0
     autoconf:
       buildable: false
       externals:
