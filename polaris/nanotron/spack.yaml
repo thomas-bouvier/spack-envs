@@ -10,10 +10,10 @@ spack:
   - nccl +cuda cuda_arch=80
   - nccl-tests +cuda cuda_arch=80
   - magma +cuda cuda_arch=80
-  - py-torch@2.5 ~gloo ~valgrind ~caffe2 ~kineto +cuda cuda_arch=80 +nccl +cudnn +magma +distributed
+  - py-torch@2.7 ~gloo ~valgrind ~caffe2 ~kineto +cuda cuda_arch=80 +nccl +cudnn +magma +distributed
   - py-nanotron@main +datastates
   - py-datasets ^arrow +snappy
-  - python@3.11
+  - python@3.13
   - nvtx +python
   #- py-pip
   - vim
